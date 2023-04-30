@@ -1,0 +1,193 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+    <div class="modal hide fade" id="errModal">
+      <div class="modal-header">
+          <a class="close" data-dismiss="modal">×</a>
+          <h3>Error</h3>
+      </div>
+      <div class="modal-body">
+          <p>There was an error making a request to the database. Please try again later.</p>
+      </div>
+      <div class="modal-footer">
+          <a href="#" class="btn btn-primary">Close</a>
+      </div>
+  </div>
+    <div class="container-fluid">
+      <div class="row-fluid" id="homeBack" style="text-align:center">
+        <!-- <div class="col-sm-5" id = "homeBack">
+          <h2 style="font-weight: bold;">For You</h2>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-auto" id = "homeBack"> -->
+          <h2 style="font-weight: bold;">Recent Listings</h2>
+          <%
+            var cards = '';
+            if(data != '') {
+              cards += '<div class="row mb-3">';
+              for (let i = 0; i < 3; i++) {
+                  cards += '<div class="col-sm-3" id="homeCards"><div class="card"><img class="card-img-top" src="'+data[i].link+'" alt="'+data[i].alttext+'" height="75px" width="30px"><div class="card-content" style="background-color: #CFB87C;"><a href="/listings?id='+data[i].listingid+'" class="stretched-link">'+data[i].ltitle+'</a></div></div></div>';
+              }
+              cards += '</div>';
+              cards += '<div class="row mb-3">';
+              for(let i = 3; i < 5; i++) {
+                  cards += '<div class="col-sm-3" id="homeCards"><div class="card"><img class="card-img-top" src="'+data[i].link+'" alt="'+data[i].alttext+'" height="75px" width="30px"><div class="card-content" style="background-color: #CFB87C;"><a href="/listings?id='+data[i].listingid+'" class="stretched-link">'+data[i].ltitle+'</a></div></div></div>';
+              }
+              cards += '</div>';
+            }
+          %>
+          <%-cards%>
+          <!--<div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>-->
+        <!-- </div> -->
+      </div>
+    </div><br><br><br><br><br>
+    <div id="newListBox" class="container-fluid" style="background-color: #CFB87C;">
+      <br><br>
+      <h2 style="font-weight: bold; text-align: center;" id="listTitle">Make a Listing</h2>
+      <div class="row">
+          <div class="col-sm-auto">
+            <img class="square" src="../resources/images/Logo-Clear.png" alt="Logo Gold" style="height: 300px; width: 300px">
+          </div>
+          <div class="col-md-auto">
+              <br>
+              <br>
+              <form action="/" method="post">
+                <div class="form-group row">
+                  <div class="col-sm-auto">
+                    <input type="text" class="form-control"  name="product" id="product" placeholder="Product or Service" required>
+                  </div>
+                  <div class="col-sm-auto">
+                    <select class="form-select" name="type" id="type" onchange="disablePrice()" aria-label="Default select example" required>
+                      <option selected>Type</option>
+                      <option value="Selling">Selling</option>
+                      <option value="Trading">Trading</option>
+                      <option value="Service">Service</option>
+                      <option value="Event">Event</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control"  name="price" id="price" placeholder="Price" pattern="[0-9]+([\.][0-9]{2})?" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-auto">
+            <br><br>
+            <div class="form-group row">
+              <div class="col-sm-auto">
+                <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Latitude (xxx.xxxxxx)" pattern="[0-9]{3}.[0-9]{6}" required>
+              </div>
+              <div class="col-sm-auto">
+                <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Longitude (xxx.xxxxxx)" pattern="[0-9]{3}.[0-9]{6}" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <input type="url" class="form-control" name="img1" id="img1" placeholder="https://example... (Optional)" pattern="https://.*">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <input type="url" class="form-control" name="img2" id="img2" placeholder="https://example... (Optional)" pattern="https://.*">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <input type="url" class="form-control" name="img3" id="img3" placeholder="https://example... (Optional)" pattern="https://.*">
+              </div>
+            </div>
+          </div>
+              <button type="submit" id="subList" style="color:#CFB87C;background-color:black" class="btn btn-primary btn-block">Submit</button>
+              <br>
+        </form>
+          <!--TREVOR NOTE: Please Change to not part of the form, just a static image-->
+        </div>
+        </div><br><br><br><br>
+    <br><br><br><br><br><br><br>
+
+ <%- include('../partials/footer') %>

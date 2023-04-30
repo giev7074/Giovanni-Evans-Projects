@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Visual Database Test</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	
+  </head>
+  <body>
+    <h1 style="text-align: center;">Listings Display Test</h1>
+    <table>
+      <tr>
+        <th>Listing ID</th>
+        <th>Listing Type</th>
+        <th>Listed By</th>
+        <th>Listed At</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Closed?</th>
+      </tr>
+      <%
+      if (data) {
+          var table = '';
+          data.forEach(function(item){
+            table += '<tr><td>'+String(item.listingid)+'</td><td>'+item.ltype+'</td><td><a href="/user?id='+item.listedby+'">'+item.listedby+'</a></td><td>'+String(item.lpostedtime)+'</td><td>'+item.ldesc+'</td><td>'+String(item.lprice)+'</td><td>'+String(item.lstatus)+'</td></tr>';
+          }); %>
+          <%- table %>
+      <% } %>
+    </table>
+<<<<<<< HEAD
+
+    <table>
+      <tr>
+        <th>User ID</th>
+        <th>Screen Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Join Date</th>
+      </tr>
+      <%
+      if (data) {
+          var table2 = '';
+          data.forEach(function(item){
+            table2 += '<tr><td>'+String(item.UserId)+'</td><td>'+item.screenName+'</td><td>'+item.email+'</td><td>'+String(item.pword)+'</td><td>'+item.joinDate+'</td></tr>';
+          }); %>
+          <%- table2 %>
+      <% } %>
+    </table>
+
+    <table>
+      <tr>
+        <th>Picture ID</th>
+        <th>Listing ID</th>
+        <th>Picture Link</th>
+        <th>Alt Text</th>
+      </tr>
+      <%
+      if (data) {
+          var table3 = '';
+          data.forEach(function(item){
+            table3 += '<tr><td>'+String(item.PicID)+'</td><td>'+item.ListingID+'</td><td>'+item.link+'</td><td>'+String(item.altText)+'</td></tr>';
+          }); %>
+          <%- table3 %>
+      <% } %>
+    </table>
+=======
+    <h2 style="text-align: center;">Add Listing</h2>
+    <p>TODO</p>
+>>>>>>> 0c6af7ec4fe792c5144cfc4e3bdfcf60f50b32a1
+  </body>
+</html>

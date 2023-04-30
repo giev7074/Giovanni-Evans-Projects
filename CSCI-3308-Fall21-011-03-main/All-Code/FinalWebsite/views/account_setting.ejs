@@ -1,0 +1,182 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+
+	<script type="text/javascript">
+		console.log(items[0]);
+	</script>
+
+	<div class="container" id="tabs">
+    <ul class="nav nav-tabs">
+      <li><a class="op" data-toggle="tab" href="#mine">My Listings</a></li>
+      <li><a class="op" data-toggle="tab" href="#acc">Account</a></li>
+      <li><a class="op" data-toggle="tab" href="#pref">Preferences</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="mine" class="tab-pane fade show active">
+        <div class="container" id="account">
+          <h3 class="heads">My Listings</h3>
+
+					<%
+
+            if (items != '') {
+							console.log(items[0]);
+          		var cards = '';
+          	//<!-- Iterate the items object & update the cards variable -->
+
+              cards += '<div class="container">'
+
+                	for (let j = 0; j < items.length; j++)
+              	  {
+                	 cards += '<div class="row">'
+                	 cards += '<div class="col-10"><div class="card mb-3" style="max-width: 800px;">  <div class="row no-gutters"> <div class="col-md-4"> <img src=" '+items[j].link+'" class="card-img" alt="..."></div><div class="col-md-8"><div class="card-body"><h5 class="card-title"><a href="/listings?id='+items[j].listingid+'">'+items[j].ltitle+'</a></h5><p class="card-text">'+items[j].ldesc+'</p><p class="card-text"><small class="text-muted"> '+items[j].llat+' - '+items[j].llon+'</small></p></div></div></div></div></div>'
+									 cards += '<div class="col-2">'
+                	 cards += '<button id="sold" type="button" name="button">Mark as Sold</button>'
+                	 cards += '<button id="deleter" type="button" name="button">Delete</button>'
+									 cards += '</div>'
+                   cards += '</div>'
+              	  }
+
+              cards += '</div>'
+						}
+          %>
+
+          <%- cards %>
+
+
+        </div>
+      </div>
+      <div id="acc" class="tab-pane fade">
+        <div class="container" id="account">
+          <h3 class="heads">Account</h3>
+          <form action="/account_setting/update_preferences" method="post"">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Change Email address</label>
+              <input type="email" class="form-control" id="changeEmail" name="changeEmail" placeholder="Enter New Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Change Password</label>
+              <input type="text" class="form-control" id="confirmPW" name="confirmPW" placeholder="Confirm Current Password">
+              <input type="text" class="form-control" id="newPW" name="newPW" placeholder="Enter New Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Change Username</label>
+              <input type="text" class="form-control" id="changeUser" name="changeUser" placeholder="Enter New Username">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Change Phone Number</label>
+              <input type="text" class="form-control" id="changePhone" name="changePhone" placeholder="Enter New Phone Number">
+            </div>
+        <!--    <label for="exampleFormControlInput1">Change Student Status</label>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Current Student</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" onclick="viewStudentMenu('student_status', 1);viewStudentMenu('alumni_year', 0);" type="radio" name="studentStatus" id="studentStatusYes" value="Yes" required>
+                    <label class="form-check-label" for="studentStatusYes">Yes</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" onclick="viewStudentMenu('student_status', 0);viewStudentMenu('alumni_year', 1);" type="radio" name="studentStatus" id="studentStatusAlum" value="Alum">
+                    <label class="form-check-label" for="studentStatusAlum">Alumni</label>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row" id="student_status" style="visibility: hidden; height: 0px;">
+                <legend class="col-form-label col-sm-2 pt-0">Student Status</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" onclick="viewStudentMenu('undergrad_select', 1);viewStudentMenu('grad_select', 0);" type="radio" name="student_type" id="undergrad" value="U">
+                    <label class="form-check-label" for="undergrad">Undergrad</label>
+                  </div>
+                  <select name="undergrad_level" id="undergrad_select" class="custom-select custom-select-sm" style="visibility: hidden; height:0px;">
+                    <option selected>Select Student Status</option>
+                    <option value="1">Freshman</option>
+                    <option value="2">Sophomore</option>
+                    <option value="3">Junior</option>
+                    <option value="4">Senior</option>
+                  </select>
+                  <div class="form-check">
+                    <input class="form-check-input" onclick="viewStudentMenu('undergrad_select', 0);viewStudentMenu('grad_select', 1)" type="radio" name="student_type" id="graduate" value="G">
+                    <label class="form-check-label" for="graduate">Grad</label>
+                  </div>
+
+                  <select name="grad_level" id="grad_select" class="custom-select custom-select-sm" style="visibility: hidden; height: 0px">
+                    <option selected>Select Student Status</option>
+                    <option value="1">Masters</option>
+                    <option value="2">MBA</option>
+                    <option value="3">PhD</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row" id="alumni_year" style="visibility: hidden; height: 0px;">
+                <legend class="col-form-label col-sm-2 pt-0">Alumni Status</legend>
+                <!-- <label class="col-sm-2 col-form-label" for="gradYear">Grad Year:</label> -->
+              <!--    <div class="col-sm-2">
+                    <input type="text" class="form-control" name="gradYear" id="gradYear" placeholder="Grad Year">
+                  </div>
+                <!-- <div class="col-sm-10">
+                  <div class="form-check">
+                    <label class="form-check-label" for="gradYear">Grad Year:</label>
+                    <input class="form-check-input" onclick="" type="text" name="gradYear" id="gradYear" placeholder="Grad Year" required>
+                  </div>
+                </div> 
+              </div>
+            </fieldset> -->
+                        
+            <button id="save" type="submit" name="Submit">Save Changes</button>
+
+
+          </form>
+        </div>
+      </div>
+
+      <div id="pref" class="tab-pane fade">
+        <div class="container" id="account">
+          <h3 class="heads">Preferences</h3>
+
+          <label for="exampleFormControlInput1">Show my Listings</label>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+          </div>
+
+          <label for="exampleFormControlInput1">Hide my name and Location</label>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Change My Location</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter New Location">
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Hide Listings From:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <button id="save"type="button" name="button">Save Changes</button>
+            <button id="delete"type="button" name="button">Delete Account</button>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+	</div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<%- include('../partials/footer') %>

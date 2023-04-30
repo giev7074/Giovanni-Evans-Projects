@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Bufflist Home</title>
+    <link rel='icon' href='../Images/CU-Black.png' type='image/x-icon'/>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <!-- <link href="settings.css" rel="stylesheet"> -->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #CFB87C;">
+      <a class="navbar-brand" href="home.html">
+        <img class="rounded-circle" src="../Images/Logo-Clear.png" alt="" width="60" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listings.html">Listings </a>
+          </li>
+          <li class="nav-item" id="settings">
+            <a class="nav-link" href="account_settings.html"> Settings </a>
+          </li>
+          <li class="nav-item ml-auto" id="sign">
+            <a class="nav-link" href="signup.html">Sign-up</a>
+          </li>
+        </ul>
+        <li class="nav-item" id="searchPlace" style="list-style: none;">
+          <input class="btn btn-outline-light my-2 my-sm-0" id="search" type="text" placeholder="Search..">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit" value=""><a style="color: black;" href="listings.html"><img src="../Images/searchLogo.png" alt="" width="20" height="20"></a></button>
+        </li>
+        <div class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" value="login.html"><a style="color: black;" href="login.html">Log In</a></button>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row-fluid" id="homeBack" style="text-align:center">
+        <!-- <div class="col-sm-5" id = "homeBack">
+          <h2 style="font-weight: bold;">For You</h2>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-lg-auto" id = "homeBack"> -->
+          <h2 style="font-weight: bold;">Recent Listings</h2>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+            <div class="col-sm-3" id="homeCards">
+              <div class="card">
+                <img class="card-img-top" src="../Images/Logo-Gold.png" alt="Temp Image" height="75px" width="30px">
+                <div class="card-content" style="background-color: #CFB87C;">This is where a short description about a listing goes</div>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+    </div><br><br><br><br><br>
+    <div class="container-fluid" style="background-color: #CFB87C;">
+        <div class="row">
+          <div class="col-sm-auto">
+            <br><br><br><br><br>
+            <img class="square" src="../Images/Logo-Clear.png" alt="Logo Gold" style="height: 300px; width: 300px">
+          </div>
+          <div class="col-md-auto">
+            <br>
+            <h2 style="font-weight: bold; text-align: center;">Make a Listing</h2>
+            <br>
+            <form action="listings.html">
+              <div class="form-group row">
+                <div class="col-sm-auto">
+                  <input type="text" class="form-control"  name="product" id="product" placeholder="Product or Service" required>
+                </div>
+                <div class="col-sm-auto">
+                  <input type="text" class="form-control" name="condition" id="condition" placeholder="Condition">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-auto">
+                  <input type="text" class="form-control"  name="price" id="price" placeholder="Price" required>
+                </div>
+                <div class="col-sm-auto">
+                  <input type="text" class="form-control" name="tradeOk" id="tradeOk" placeholder="Trade Ok?" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" name="location" id="location" placeholder="Location" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" name="description" id="description" placeholder="Description">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <input type="text" class="form-control" name="tags" id="tags" placeholder="Tags,Tags,Tags,">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <button class="btn btn-primary btn-block" style="color:#CFB87C;background-color:black" type="button" name="Submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div id="addPhotoPlace">
+            <button class="btn btn-outline-light my-2 my-sm-0" id="addPhoto" type="button">
+              <a style="color: black;" href="listings.html"><img src="../Images/addPhoto.png" alt="" width="230" height="200"></a>
+            </button>
+          </div>
+        </div>
+    </div><br><br><br><br>
+    <br><br><br><br><br><br><br>
+
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Copyright -->
+      <div id="feet" class="text-center p-3" style="background-color: rgba(207,184,124);">
+        hello
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../Scripts/buffscripts.js"></script>
+  </body>
+</html>

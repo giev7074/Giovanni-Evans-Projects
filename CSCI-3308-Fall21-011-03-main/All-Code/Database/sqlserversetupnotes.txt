@@ -1,0 +1,35 @@
+Trevor Liss - 9.27.21
+#################
+Notes on SQL Setup
+###
+-Building Tables using Microsoft SQL Server Management Studio
+-Tables will be hosted on SQL Server 2019 Express Edition
+--Locally Hosted for now on my Windows Machine (idrk what I'll be able to upload to github yet)
+--SQL Server 2019 (Windows) HAS a docker download, too lazy to look into atm + i dont rly understand docker
+-Connecting to DB
+--MSSMS Automatically sees 'SQLEXPRESS', connects via windows auth
+##################
+Notes on Tables
+###
+Table 1.1 - Listings
+Schema:
+	ListingID - int - unique # for each listing
+	LType - varchar - Type of Listing (Selling, Looking for, Service, etc.)
+	ListedBy - int - id of user who posted listing
+	LPostedTime - datetime - date and time listing was posted
+	LTitle - varchar - user inputed Listing Title
+	LDesc - text - user inputed Listing Description
+	LPrice - decimal - price (if applicable) of listing
+	LLat - float - latitude of listing location (if applicable)
+	LLon - float - longitude of listing location (if applicable)
+	LStatus - bit - 1 for sold/resolved, 0 for open listing
+Table 1.2 - Pics
+Schema:
+	ListingID - int - reference to lisitng pics are for
+	link - varchar - realitive file path to image to show
+	altText - varchar - text to use if image not showable (user-defined?)
+Table 2 - Users
+	UserID - int - unique # of each user
+	screenName - varchar - user-defined username
+	(TODO: User verificaiton data [ie username, password, email storage])
+	joinDate - datetime - when user first joined website

@@ -1,0 +1,15 @@
+# CSCI-3308-Fall21-011-03
+# Bufflist
+
+### Building and Running ###
+
+  To build and run this project a local docker container will be required. Clone the repository and in the terminal navigate to 011-03/All-Code/FinalWebsite. With the docker desktop application open, run the command  "docker-compose up -d" . This will create the images and run the docker container in the background. The website can then be accessed through localhost:3000. To get past the login loop, create an account and you will be redirected to your home page.
+
+### Project Description ###
+
+  Bufflist is a multi use website specifically catered to University of Colorado Boulder students. Bufflist provides a plethora of applications ranging from getting help with odd jobs to buying and selling clothes. This interactive website will work similarly to Craigslist or ebay in that users of the site can post on the main page about their specific needs and can also sift through a stream of other CU Boulder student posts. Additionally, Bufflist will provide a search bar where users can look for specific needs. However, the aspect of Bufflist that sets it apart from typical buying and selling websites is the fact that only CU Boulder students can use it. Thus, every user on the website will be in the same area and users will not have to worry about shipping or driving far distances to complete a purchase. 
+	Our goal in making Bufflist is that we can provide CU Boulder students, such as ourselves, with affordable prices for things ranging from desks to plumbing services that would not normally be affordable. One aspect of this website that helps toward this goal is that users can trade their own goods or skills for another person’s goods or skills. This allows students at Boulder to make purchases without taking any money out of their bank accounts and will even help the overwhelming problem of wasted desks, couches, etc. that litter the town of Boulder.
+
+### Archietecture Description ###
+
+  The technologies we will be utilizing on the backend consist primarily of an SQL server to hold all of our listing and user information. Currently, we envision utilizing 2 tables, one for login and user information, and one for listing information. We will use PHP code to connect this database with the Front End of our codebase, which will be a Website that uses HTML, CSS, and some javascript to aesthetically present the contents of the database and to allow users to log in and interact with the database, creating and commenting on listings, communicating with each other, and more. We also envision connecting in a few APIs to further the user experience. For example, an OAuth connection to the Identikey service to bring users into the CU account could be a stretch goal, or using Google Maps API to represent locations of listings on campus/in Boulder and give users directions and/or hotspots. These APIs would be implemented and their OAuth maintained by either Microsoft Flows, or, if easier to implement, live javascript or python code. 

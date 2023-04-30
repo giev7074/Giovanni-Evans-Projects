@@ -1,0 +1,49 @@
+
+  <%- include('../partials/header'); -%>
+
+  <%- include('../partials/navbar'); -%>
+
+  <div class="container-lg" style="margin-top: 2%;" id='fillup'>
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="row-fluid" id="homeBack" style="text-align:center">
+      <% 
+      var searchQueryTag = '<h2 style="font-weight: bold; text-align:center;" id="searchTitle">All Listings</h2>';
+      if (searchQuery != '') {
+        searchQueryTag = '<h2 style="font-weight: bold; text-align:center;" id="searchTitle">Search Results for '+searchQuery+'</h2>'
+      } 
+        %> 
+      <%-searchQueryTag%>
+      <%
+
+        if (items != '') {
+          console.log("Items: \n");
+          console.log(items);
+          var cards = '';
+        //<!-- Iterate the items object & update the cards variable -->
+
+          cards += '<div id="whole">'
+
+              cards += '<div class="row">'
+              for (let j = 0; j < items.length; j++)
+              {
+                cards += '<div class="col-sm-3" id="homeCards"><div class="card">';
+                if(items[j].link != null) {
+                  cards += '<img class="card-img-top" src="'+items[j].link+'" alt="'+items[j].alttext+'" height="75px" width="30px">';
+                }
+                else {
+                  cards += '<img class="card-img-top" src="../resources/images/imageNotFound.png" alt="Image not Found" height="75px" width="30px">'
+                }
+                cards += '<div class="card-content" style="background-color: #CFB87C;"><a href="/listings?id='+items[j].listingid+'" class="stretched-link">'+items[j].ltitle+'</a></div></div></div>';
+              }
+              cards += '</div>'
+
+          cards += '</div>'
+        }
+      %>
+
+      <%- cards %>
+    </div>
+  </div>

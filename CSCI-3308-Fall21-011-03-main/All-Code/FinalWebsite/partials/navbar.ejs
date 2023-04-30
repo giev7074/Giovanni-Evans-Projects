@@ -1,0 +1,39 @@
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #CFB87C;">
+      <a class="navbar-brand" href="/">
+        <img class="rounded-circle" src="../resources/images/Logo-Clear.png" alt="" width="60" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/search">Search </a>
+          </li>
+          <li class="nav-item" id="settings">
+            <a class="nav-link" href="/account_setting"> Settings </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/listings">Listing </a>
+          </li>
+          <!--- <li class="nav-item ml-auto" id="sign">
+            <a class="nav-link" href="/signup">Sign-up</a>
+          </li> -->
+        </ul>
+        <li class="nav-item" id="searchPlace" style="list-style: none;">
+          <form class="" action="/get_search" method="post">
+            <input class="btn btn-outline-light my-2 my-sm-0" name="search" id="search" type="text" placeholder="Search..">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="Submit" value=""><img src="../resources/images/searchLogo.png" alt="" width="20" height="20"></button>
+          </form>
+          </li>
+        <li class="nav-item" id="screenName" style="list-style: none;">
+          <p>Welcome, <%-screenname%>!</p>
+        </li>
+        <div class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" value="/login"><a style="color: black;" href="/login">Log In</a></button>
+        </div>
+      </div>
+    </nav>
